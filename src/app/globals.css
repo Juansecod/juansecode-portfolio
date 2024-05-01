@@ -31,6 +31,7 @@ body {
     text-wrap: balance;
   }
 }
-.mouse{
-  background: radial-gradient(600px at 888px 304px, rgba(29, 78, 216, 0.15), transparent 80%);
+
+::-webkit-scrollbar {
+  display: none;
 }
