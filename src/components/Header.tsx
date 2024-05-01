@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const PAGES = ["about", "experience", "projects"];
+const PAGES = ["about", "career", "projects"];
 
 const NETWORKS = [{
     name: "GitHub",

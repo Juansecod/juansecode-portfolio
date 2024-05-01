@@ -70,13 +70,13 @@ const About = () => {
             <h5 className="text-white bg-slate-900 font-semibold text-md text-center py-2">Technical skills</h5>
             <div className="flex flex-row gap-3 px-5 justify-evenly flex-wrap">
                 {TECH_KNOWLEDGE.map(({name, icon})=>
-                    (<Image src={icon} title={name.charAt(0).toUpperCase() + name.slice(1)} alt={"icon " + name} className="cursor-pointer bg-white max-w-[50px] max-h-[50px] py-2 rounded-md lg:max-w-[100px] lg:max-h-[100px] hover:transform hover:scale-125 lg:hover:scale-110 transition-all" key={name}/>)
+                    (<Image src={icon} title={name.charAt(0).toUpperCase() + name.slice(1)} alt={"icon " + name} className="cursor-pointer bg-white max-w-[50px] max-h-[50px] py-2 rounded-md lg:max-w-[90px] lg:max-h-[90px] hover:transform hover:scale-125 lg:hover:scale-110 transition-all" key={name}/>)
                 )}
             </div>
             <h5 className="text-white bg-slate-900 font-semibold text-md text-center py-2">Team Management</h5>
             <div className="flex flex-row gap-3 px-5 justify-evenly flex-wrap">
                 {TEAM_KNOWLEDGE.map(({name, icon})=>
-                    (<Image src={icon} title={name.charAt(0).toUpperCase() + name.slice(1)} alt={"icon " + name} className="cursor-pointer bg-white max-w-[50px] max-h-[50px] py-2 rounded-md lg:max-w-[100px] lg:max-h-[100px] hover:transform hover:scale-125 lg:hover:scale-110 transition-all" key={name}/>)
+                    (<Image src={icon} title={name.charAt(0).toUpperCase() + name.slice(1)} alt={"icon " + name} className="cursor-pointer bg-white max-w-[50px] max-h-[50px] py-2 rounded-md lg:max-w-[90px] lg:max-h-[90px] hover:transform hover:scale-125 lg:hover:scale-110 transition-all" key={name}/>)
                 )}
             </div>
         </section>
