@@ -31,7 +31,7 @@ const Header = () => {
     const [classSecret, setClassSecret] = useState("");
 
     return(
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 justify-center items-center lg:justify-normal lg:items-start ">
+        <header className="lg:sticky lg:top-0 flex flex-col lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 justify-between gap-5 lg:justify-between lg:items-start">
             <div className="flex flex-col justify-center items-center text-center lg:text-left lg:justify-normal lg:items-start w-full">
                 <Image className="cursor-pointer self-center bg-white  rounded-md hover:transform hover:scale-110 transition-all" src={profilePic} width={100} height={100} alt="Profile pic" 
                 onMouseOut={()=>{
@@ -48,7 +48,7 @@ const Header = () => {
                 <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Software Engineer Student</h2>
                 <p className="mt-4 max-w-xs leading-normal">Fullstack enthusiast with a curiosity for software architecture.</p>
                 <nav className="nav hidden lg:block">
-                    <ul className="mt-16 w-max">
+                    <ul className="mt-5 w-max">
                         {PAGES.map((page)=>(
                             <Link className="group flex items-center py-3 active" href={`#${page}`} key={page}>
                                 <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
@@ -58,7 +58,7 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <ul className="ml-1 mt-8 flex items-center justify-evenly">
+            <ul className="flex items-center justify-evenly">
                 {NETWORKS.map(({name,link,icon})=>(
                     <li className="mr-5 text-xs shrink-0" key={name}>
                         <a className="block hover:text-slate-200" href={link} target="_blank" rel="noreferrer noopener" aria-label={`${name} (opens in a new tab)`} title={name}>
