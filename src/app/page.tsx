@@ -23,7 +23,7 @@ export default function Home() {
     <main className="mx-auto px-6 py-12 font-sans flex min-h-screen flex-col md:flex-row bg-slate-900 text-slate-400 md:justify-evenly md:px-12 md:pt-20 md:pb-2 lg:px-24 lg:h-screen lg:w-screen lg:overflow-hidden" >
       <div className="flex flex-col lg:flex-row lg:justify-between gap-4 max-w-[1440px]">
         <Header />
-        <div className="md:w-1/2 flex flex-col gap-10 lg:overflow-y-scroll scroll-smooth">
+        <div className="lg:w-1/2 flex flex-col gap-10 lg:overflow-y-scroll scroll-smooth">
           <About />
         </div>
       </div>

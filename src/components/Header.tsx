@@ -1,4 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
+import profilePic from "@/assets/profile-pic.jpeg";
+import { useState } from "react";
 
 const PAGES = ["about", "career", "projects"];
 
@@ -20,12 +23,27 @@ const NETWORKS = [{
     icon: (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227" fill="none" className="h-5 w-5" aria-hidden="true"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="currentColor"></path></svg>)
 }];
 
+const NAME = "Juan Sebastian Rios Valencia";
+const USERNAME = "Juansecode";
+
 const Header = () => {
+    const [title, setTitle] = useState(NAME);
+    const [classSecret, setClassSecret] = useState("");
+
     return(
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 ">
-            <div>
-                <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
-                    <Link href="./">Juan Sebastian Rios Valencia</Link>
+        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 justify-center items-center lg:justify-normal lg:items-start ">
+            <div className="flex flex-col justify-center items-center text-center lg:text-left lg:justify-normal lg:items-start w-full">
+                <Image className="cursor-pointer self-center bg-white  rounded-md hover:transform hover:scale-110 transition-all" src={profilePic} width={100} height={100} alt="Profile pic" 
+                onMouseOut={()=>{
+                    setTitle(NAME);
+                    setClassSecret("")
+                }} 
+                onMouseEnter={()=>{
+                    setTitle("I tell a secret, i like where call me " + USERNAME);
+                    setClassSecret("text-sky-300");
+                }}/>
+                <h1 className={"text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl " + classSecret}>
+                    <Link href="./">{title}</Link>
                 </h1>
                 <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Software Engineer Student</h2>
                 <p className="mt-4 max-w-xs leading-normal">Fullstack enthusiast with a curiosity for software architecture.</p>
@@ -40,7 +58,7 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <ul className="ml-1 mt-8 flex items-center">
+            <ul className="ml-1 mt-8 flex items-center justify-evenly">
                 {NETWORKS.map(({name,link,icon})=>(
                     <li className="mr-5 text-xs shrink-0" key={name}>
                         <a className="block hover:text-slate-200" href={link} target="_blank" rel="noreferrer noopener" aria-label={`${name} (opens in a new tab)`} title={name}>
