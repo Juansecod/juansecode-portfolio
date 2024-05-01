@@ -63,7 +63,7 @@ const TEAM_KNOWLEDGE = [{
 const About = () => {
     return (
         <section id="about">
-            <h3 className="text-white sticky top-0 bg-slate-900 font-semibold text-xl text-center py-2 md:hidden">About Me</h3>
+            <h3 className="text-white sticky top-0 bg-slate-900 font-semibold text-xl text-center py-2">About Me</h3>
             {"Hello there! I'm Juan Sebastian, a Junior FullStack Web and a Software Engineer in training. Enthusiastic about living new experiences in companies within the sector. Motivated to continuously learn from colleagues and the challenges they present. Highly interested in the areas of architecture and development, aiming for high-quality software with minimal cost for clients."}
             <h4 className="text-white sticky top-0 lg:relative bg-slate-900 font-semibold text-l text-center py-2">Knowledge</h4>
             {"In the following sections, you'll find an overview of my technical skills and team management abilities, providing insights into my expertise in software development and technology."}
