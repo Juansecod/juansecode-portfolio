@@ -28,7 +28,7 @@ const USERNAME = "Juansecode";
 
 const Header = () => {
     const [title, setTitle] = useState(NAME);
-    const [classSecret, setClassSecret] = useState("");
+    const [classSecret, setClassSecret] = useState("text-slate-200");
 
     return(
         <header className="lg:sticky lg:top-0 flex flex-col lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24 justify-between gap-5 lg:justify-between lg:items-start">
@@ -36,13 +36,13 @@ const Header = () => {
                 <Image className="cursor-pointer self-center bg-white  rounded-md hover:transform hover:scale-110 transition-all" src={profilePic} width={100} height={100} alt="Profile pic" 
                 onMouseOut={()=>{
                     setTitle(NAME);
-                    setClassSecret("")
+                    setClassSecret("text-slate-200")
                 }} 
                 onMouseEnter={()=>{
                     setTitle("I tell a secret, i like where call me " + USERNAME);
                     setClassSecret("text-sky-300");
                 }}/>
-                <h1 className={"text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl " + classSecret}>
+                <h1 className={"text-4xl font-bold tracking-tight sm:text-5xl " + classSecret}>
                     <Link href="./">{title}</Link>
                 </h1>
                 <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Software Engineer Student</h2>
