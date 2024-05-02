@@ -39,7 +39,7 @@ const Header = () => {
                     setClassSecret("text-slate-200")
                 }} 
                 onMouseEnter={()=>{
-                    setTitle("I tell a secret, i like where call me " + USERNAME);
+                    setTitle("I tell a secret, I like where call me " + USERNAME);
                     setClassSecret("text-sky-300");
                 }}/>
                 <h1 className={"text-4xl font-bold tracking-tight sm:text-5xl " + classSecret}>

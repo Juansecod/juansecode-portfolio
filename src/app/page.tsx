@@ -1,5 +1,6 @@
 "use client"
 import About from "@/components/About";
+import Career from "@/components/Carreer";
 import Header from "@/components/Header";
 import { useEffect, useState } from "react";
 
@@ -25,6 +26,7 @@ export default function Home() {
         <Header />
         <div className="lg:w-1/2 flex flex-col gap-10 lg:overflow-y-scroll scroll-smooth">
           <About />
+          <Career />
         </div>
       </div>
     </main>
