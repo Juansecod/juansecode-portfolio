@@ -2,6 +2,7 @@
 import About from "@/components/About";
 import Career from "@/components/Carreer";
 import Header from "@/components/Header";
+import SectionSeparator from "@/components/SectionSeparator";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
         <Header />
         <div className="xl:w-1/2 flex flex-col gap-10 xl:overflow-y-scroll scroll-smooth">
           <About />
+          <SectionSeparator />
           <Career />
         </div>
       </div>
