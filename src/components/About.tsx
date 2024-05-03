@@ -91,7 +91,7 @@ const About = () => {
                         rel="noreferrer noopener" 
                         aria-label={`${name} documentation (opens in a new tab)`} 
                         className={`lg:hover:bg-slate-950 flex flex-col justify-center items-center  max-w-[50px] max-h-[50px] py-2 rounded-md md:max-w-[75px] md:max-h-[75px] xl:max-w-[100px] xl:max-h-[100px] hover:text-slate-200 cursor-pointer text-center` + (!haveIcon ? ` hidden xl:block` : ``)} 
-                        key={index} title={name.charAt(0).toUpperCase() + name.slice(1)}
+                        key={index} title={"View more about " + name.charAt(0).toUpperCase() + name.slice(1)}
                     >
                         <FontAwesomeIcon className="w-[80%] h-[80%] hover:transform hover:scale-125 xl:hover:scale-110 transition-all" icon={icon} />
                         <i className="hidden w-100% xl:block">{name.charAt(0).toUpperCase() + name.slice(1)}</i>
@@ -106,7 +106,7 @@ const About = () => {
                         rel="noreferrer noopener" 
                         aria-label={`${name} documentation (opens in a new tab)`} 
                         className={`lg:hover:bg-slate-950 flex flex-col justify-center items-center  max-w-[50px] max-h-[50px] py-2 rounded-md md:max-w-[75px] md:max-h-[75px] xl:max-w-[100px] xl:max-h-[100px] hover:text-slate-200 cursor-pointer text-center` + (!haveIcon ? ` hidden xl:block` : ``)} 
-                        key={index} title={name.charAt(0).toUpperCase() + name.slice(1)}>
+                        key={index} title={"View more about " + name.charAt(0).toUpperCase() + name.slice(1)}>
                         <FontAwesomeIcon className="w-[80%] h-[80%] hover:transform hover:scale-125 xl:hover:scale-110 transition-all" icon={icon} />
                         <i className="hidden w-100% xl:block">{name.charAt(0).toUpperCase() + name.slice(1)}</i>
                     </a>)
