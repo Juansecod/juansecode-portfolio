@@ -4,8 +4,18 @@ import profilePic from "@/assets/profile-pic.jpeg";
 import { useState } from "react";
 import { faGithub, faLinkedin, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser, faGraduationCap, faFolderOpen } from "@fortawesome/free-solid-svg-icons";
 
-const PAGES = ["about", "career", "projects"];
+const PAGES = [{
+    page: "about",
+    icon: faUser
+}, {
+    page: "career",
+    icon: faGraduationCap
+}, {
+    page: "projects",
+    icon: faFolderOpen
+}];
 
 const NETWORKS = [{
     name: "GitHub",
@@ -51,7 +61,7 @@ const Header = () => {
                 <p className="mt-4 max-w-xs leading-normal">Fullstack enthusiast with a curiosity for software architecture.</p>
                 <nav className="nav hidden xl:block">
                     <ul className="mt-5 w-max">
-                        {PAGES.map((page)=>(
+                        {PAGES.map(({page})=>(
                             <Link className="group flex items-center py-3 active" href={`#${page}`} key={page}>
                                 <span className="nav-indicator mr-4 h-px w-8 bg-slate-600 transition-all group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
                                 <span className="nav-text text-xs font-bold uppercase tracking-widest text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">{page}</span>
@@ -72,6 +82,17 @@ const Header = () => {
                     </li>
                 ))}
             </ul>
+            <nav className="nav fixed bottom-2 right-2 z-50 block xl:hidden w-1/2 p-2 rounded-lg">
+                    <ul className="flex  justify-around">
+                        {PAGES.map(({page, icon})=>(
+                            <Link className="group active p-1 rounded-full" href={`#${page}`} key={page}>
+                                <i className="flex items-centers justify-center rounded-full bg-slate-950 text-white p-2 hover:text-teal-300">
+                                    <FontAwesomeIcon className="w-6 h-6 hover:transform hover:scale-110  transition-all fa-solid" icon={icon} />
+                                </i>
+                            </Link>
+                        ))}
+                    </ul>
+                </nav>
         </header>
     );
 };
