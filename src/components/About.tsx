@@ -72,7 +72,7 @@ const About = () => {
             <h5 className="text-white bg-slate-900 font-semibold text-md text-center py-2">Technical skills</h5>
             <div className="flex flex-row gap-3 px-5 justify-evenly flex-wrap">
                 {TECH_KNOWLEDGE.map(({name, icon, haveIcon}, index)=>
-                    (<i className={`flex flex-col justify-center items-center  max-w-[50px] max-h-[50px] py-2 rounded-md md:max-w-[75px] md:max-h-[75px] xl:max-w-[100px] xl:max-h-[100px] hover:text-slate-200 cursor-pointer text-center` + (!haveIcon ? ` hidden xl:block` : ``)} key={index} title={name.charAt(0).toUpperCase() + name.slice(1)}>
+                    (<i className={`lg:hover:bg-slate-950 flex flex-col justify-center items-center  max-w-[50px] max-h-[50px] py-2 rounded-md md:max-w-[75px] md:max-h-[75px] xl:max-w-[100px] xl:max-h-[100px] hover:text-slate-200 cursor-pointer text-center` + (!haveIcon ? ` hidden xl:block` : ``)} key={index} title={name.charAt(0).toUpperCase() + name.slice(1)}>
                         <FontAwesomeIcon className="w-[80%] h-[80%] hover:transform hover:scale-125 xl:hover:scale-110 transition-all" icon={icon} />
                         <i className="hidden w-100% xl:block">{name.charAt(0).toUpperCase() + name.slice(1)}</i>
                     </i>)
@@ -81,7 +81,7 @@ const About = () => {
             <h5 className="text-white bg-slate-900 font-semibold text-md text-center py-2">Team Management</h5>
             <div className="flex flex-row gap-3 px-5 justify-evenly flex-wrap">
                 {TEAM_KNOWLEDGE.map(({name, icon, haveIcon}, index)=>
-                    (<i className={`flex flex-col justify-center items-center  max-w-[50px] max-h-[50px] py-2 rounded-md md:max-w-[75px] md:max-h-[75px] xl:max-w-[100px] xl:max-h-[100px] hover:text-slate-200 cursor-pointer text-center` + (!haveIcon ? ` hidden xl:block` : ``)} key={index} title={name.charAt(0).toUpperCase() + name.slice(1)}>
+                    (<i className={`lg:hover:bg-slate-950 flex flex-col justify-center items-center  max-w-[50px] max-h-[50px] py-2 rounded-md md:max-w-[75px] md:max-h-[75px] xl:max-w-[100px] xl:max-h-[100px] hover:text-slate-200 cursor-pointer text-center` + (!haveIcon ? ` hidden xl:block` : ``)} key={index} title={name.charAt(0).toUpperCase() + name.slice(1)}>
                         <FontAwesomeIcon className="w-[80%] h-[80%] hover:transform hover:scale-125 xl:hover:scale-110 transition-all" icon={icon} />
                         <i className="hidden w-100% xl:block">{name.charAt(0).toUpperCase() + name.slice(1)}</i>
                     </i>)
