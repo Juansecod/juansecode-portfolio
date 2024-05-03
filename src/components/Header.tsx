@@ -67,12 +67,9 @@ const Header = () => {
                             <span className="sr-only">{name}</span>
                             <i key={name} title={name.charAt(0).toUpperCase() + name.slice(1)}>
                                 <FontAwesomeIcon className="w-8 h-8 hover:transform hover:scale-125 xl:hover:scale-110 transition-all" icon={icon} />
-                                
                             </i>
-                            </a>
-                            
+                        </a>
                     </li>
-                    
                 ))}
             </ul>
         </header>
