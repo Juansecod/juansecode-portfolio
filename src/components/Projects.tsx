@@ -1,5 +1,5 @@
 import ProjectItem from "./ProjectItem";
-import sidesImg from "@/assets/sides.png";
+import sidesImg from "@/assets/sides.jpeg";
 
 const PROJECTS = [{
     name: "SIDES",
