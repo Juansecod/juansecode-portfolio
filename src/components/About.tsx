@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faDatabase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faJira, faSlack, faJava, faJs, faHtml5, faCss3, faGit, faNodeJs, faReact, faPython, faUncharted } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faJira, faSlack, faJava, faJs, faHtml5, faCss3, faGitAlt, faNodeJs, faReact, faPython, faUncharted } from '@fortawesome/free-brands-svg-icons';
 
 const TECH_KNOWLEDGE = [{
     name: "html",
@@ -54,7 +54,7 @@ const TECH_KNOWLEDGE = [{
     link: "https://www.mysql.com/"
 },{
     name: "git",
-    icon: faGit,
+    icon: faGitAlt,
     haveIcon: true,
     link: "https://git-scm.com/"
 }]

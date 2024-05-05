@@ -2,6 +2,7 @@
 import About from "@/components/About";
 import Career from "@/components/Carreer";
 import Header from "@/components/Header";
+import Projects from "@/components/Projects";
 import SectionSeparator from "@/components/SectionSeparator";
 import { useEffect, useState } from "react";
 
@@ -29,6 +30,8 @@ export default function Home() {
           <About />
           <SectionSeparator />
           <Career />
+          <SectionSeparator />
+          <Projects />
         </div>
       </div>
     </main>
