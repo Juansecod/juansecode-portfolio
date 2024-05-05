@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faDatabase, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faJira, faSlack, faJava, faJs, faHtml5, faCss3, faGitAlt, faNodeJs, faReact, faPython, faUncharted } from '@fortawesome/free-brands-svg-icons';
+import { Dispatch, SetStateAction, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 
 const TECH_KNOWLEDGE = [{
     name: "html",
@@ -76,9 +78,21 @@ const TEAM_KNOWLEDGE = [{
     link: "https://github.com/"
 }]
 
-const About = () => {
+interface AboutProps {
+    setActivePage: Dispatch<SetStateAction<string>>;
+}
+
+const About: React.FC<AboutProps> = ({setActivePage}) => {
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            setActivePage("about");
+        }
+    }, [inView, setActivePage]);
+
     return (
-        <section id="about">
+        <section id="about" ref={ref}>
             <h3 className="text-white sticky top-0 bg-slate-900 font-semibold text-xl text-center py-2 backdrop-blur-xl z-10">About Me</h3>
             {"Hello there! I'm Juan Sebastian, a Junior FullStack Web and a Software Engineer in training. Enthusiastic about living new experiences in companies within the sector. Motivated to continuously learn from colleagues and the challenges they present. Highly interested in the areas of architecture and development, aiming for high-quality software with minimal cost for clients."}
             <h4 className="text-white sticky top-0 bg-slate-900 font-semibold text-l text-center py-2 z-10">Knowledge</h4>

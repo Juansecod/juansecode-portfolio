@@ -4,6 +4,8 @@ import gifosImg from "@/assets/gifos.jpeg";
 import podcastImg from "@/assets/podcast.jpeg";
 import delilahImg from "@/assets/delilah.jpeg";
 import apiCurriflexImg from "@/assets/api-curriflex.jpeg";
+import { useInView } from "react-intersection-observer";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 const PROJECTS = [{
     name: "SIDES",
@@ -42,9 +44,20 @@ const PROJECTS = [{
     repo: "https://github.com/IngenieriaRequisitosUCC/API-Rest-Curriflex"
 }];
 
-const Projects = ()=>{
+interface ProjectProps {
+    setActivePage: Dispatch<SetStateAction<string>>;
+}
+
+const Projects: React.FC<ProjectProps> = ({setActivePage}) => {
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            setActivePage("projects");
+        }
+    }, [inView, setActivePage]);
     return (
-    <section id="projects">
+    <section id="projects" ref={ref}>
         <h3 className="text-white sticky top-0 bg-slate-900 font-semibold text-xl text-center py-2 z-10">Projects</h3>
         <ol className="flex flex-col gap-5 z-0">
             {PROJECTS.map((project)=>

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [activePage, setActivePage] = useState("");
 
   useEffect(() => {
     function handleMouseMove(event: { clientX: any; clientY: any; }) {
@@ -20,18 +21,19 @@ export default function Home() {
       window.removeEventListener('mousemove', handleMouseMove);
     };
   }, []);
+
   return (
     <>
     <div className="pointer-events-none fixed inset-0 z-30 transition duration-300 xl:absolute" style={{background: `radial-gradient(600px at ${position.x}px ${position.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`}}></div>
     <main className="mx-auto px-6 py-12 font-sans flex min-h-screen flex-col md:flex-row bg-slate-900 text-slate-400 md:justify-evenly md:px-12 md:pt-20 md:pb-2 xl:pt-10 xl:px-24 xl:h-screen xl:w-screen xl:overflow-hidden" >
       <div className="flex flex-col xl:flex-row xl:justify-between gap-4 max-w-[1440px]">
-        <Header />
+        <Header activePage={activePage} setActivePage={setActivePage}/>
         <div className="xl:w-1/2 flex flex-col gap-10 xl:overflow-y-scroll scroll-smooth">
-          <About />
+          <About setActivePage={setActivePage}/>
           <SectionSeparator />
-          <Career />
+          <Career setActivePage={setActivePage}/>
           <SectionSeparator />
-          <Projects />
+          <Projects setActivePage={setActivePage}/>
         </div>
       </div>
     </main>

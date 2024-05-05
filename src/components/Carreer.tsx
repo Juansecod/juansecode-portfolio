@@ -1,4 +1,6 @@
+import { useInView } from "react-intersection-observer";
 import CareerItem, { CareerItemInterface } from "./CarrerItem";
+import { Dispatch, SetStateAction, useEffect } from "react";
 
 
 const CARREER = [{
@@ -43,9 +45,20 @@ const CARREER = [{
     ]
 }]
 
-const Career = () => {
+interface CareerProps {
+    setActivePage: Dispatch<SetStateAction<string>>;
+}
+
+const Career: React.FC<CareerProps> = ({setActivePage}) => {
+    const [ref, inView] = useInView();
+
+    useEffect(() => {
+        if (inView) {
+            setActivePage("career");
+        }
+    }, [inView, setActivePage]);
     return (
-        <section id="career">
+        <section id="career" ref={ref}>
             <h3 className="text-white sticky top-0 bg-slate-900 font-semibold text-xl text-center py-2 z-10">Career</h3>
             <ol className="flex flex-col gap-5 z-0">
                 {CARREER?.map((item, i)=>
