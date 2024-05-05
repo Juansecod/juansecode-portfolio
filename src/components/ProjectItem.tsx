@@ -55,7 +55,7 @@ const ProjectItem = ({item}:{item:ProjectItemInterface}) => {
                 </ul>
             </div>
             {modalDisplay && 
-                (<div className="w-screen h-screen bg-slate-950 bg-opacity-50 fixed top-0 left-0 z-50 px-2 lg:py-20 lg:px-20 flex items-center justify-center flex-col lg:pb-5" onClick={handleModal}>
+                (<div className="w-screen h-screen bg-slate-950 bg-opacity-50 fixed top-0 left-0 z-50 px-2 lg:py-20 lg:px-20 flex items-center justify-center flex-col lg:pb-10" onClick={handleModal}>
                     <div className="max-w-[1440px] w-full h-full flex items-center justify-center flex-col gap-2">
                         <i className="self-end text-teal-200 hidden hover:text-cyan-500 hover:transform hover:scale-125 w-5 h-5 items-center justify-center rounded cursor-pointer lg:flex relative right-10">
                             <FontAwesomeIcon icon={faClose} onClick={handleModal}/>
