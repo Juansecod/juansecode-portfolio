@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({activePage, setActivePage}) => {
     return(
         <header className="xl:sticky xl:top-0 flex flex-col xl:max-h-screen xl:w-1/2 xl:flex-col xl:justify-around justify-between gap-5 xl:items-start">
             <div className="flex flex-col justify-center items-center text-center xl:text-left xl:justify-normal xl:items-start w-full">
-                <Image className="cursor-pointer self-center bg-white  rounded-md hover:transform hover:scale-110 transition-all" src={profilePic} width={100} height={100} alt="Profile pic" 
+                <Image className="cursor-pointer self-center bg-white  rounded-md hover:transform hover:scale-110 transition-all lg:w-[150px] lg:h-[150px]" src={profilePic} width={100} height={100} alt="Profile pic" 
                 onMouseOut={()=>{
                     setTitle(NAME);
                     setClassSecret("text-slate-200")
