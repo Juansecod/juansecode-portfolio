@@ -4,23 +4,12 @@ import Career from "@/components/Carreer";
 import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import SectionSeparator from "@/components/SectionSeparator";
-import { useEffect, useState } from "react";
+import useMousePosition from "@/hooks/useMousePosition";
+import { useState } from "react";
 
 export default function Home() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
   const [activePage, setActivePage] = useState("");
-
-  useEffect(() => {
-    function handleMouseMove(event: { clientX: any; clientY: any; }) {
-      setPosition({ x: event.clientX, y: event.clientY });
-    }
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
+  const position = useMousePosition();
 
   return (
     <>
