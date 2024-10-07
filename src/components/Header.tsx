@@ -4,11 +4,14 @@ import profilePic from "@/assets/profile-pic.jpeg";
 import { Dispatch, SetStateAction, useState } from "react";
 import { faGithub, faLinkedin, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faGraduationCap, faFolderOpen, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faGraduationCap, faFolderOpen, faEnvelope, faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 const PAGES = [{
     page: "about",
     icon: faUser
+}, {
+    page: "experience",
+    icon: faBriefcase
 }, {
     page: "career",
     icon: faGraduationCap
@@ -60,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({activePage, setActivePage}) => {
                     setClassSecret("text-slate-200")
                 }} 
                 onMouseEnter={()=>{
-                    setTitle("I tell a secret, I like when call me " + USERNAME);
+                    setTitle("I tell a secret, I like to be called " + USERNAME);
                     setClassSecret("text-sky-300");
                 }}/>
                 <h1 className={"text-4xl font-bold tracking-tight sm:text-5xl lg:block lg:w-full " + classSecret}>
@@ -91,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({activePage, setActivePage}) => {
                     </li>
                 ))}
             </ul>
-            <nav className="nav fixed bottom-2 right-2 z-50 block xl:hidden w-1/2 p-2 rounded-lg">
+            <nav className="nav fixed bottom-2 right-0 z-50 block xl:hidden p-2 rounded-lg">
                 <ul className="flex  justify-around">
                     {PAGES.map(({page, icon})=>(
                         <Link className="group active p-1 rounded-full" href={`#${page}`} key={page} onClick={(e)=>setActivePage(page)}>

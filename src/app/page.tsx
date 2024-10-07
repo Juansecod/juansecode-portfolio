@@ -1,6 +1,7 @@
 "use client"
 import About from "@/components/About";
 import Career from "@/components/Carreer";
+import Experience from "@/components/Experience";
 import Header from "@/components/Header";
 import Projects from "@/components/Projects";
 import SectionSeparator from "@/components/SectionSeparator";
@@ -19,6 +20,8 @@ export default function Home() {
         <Header activePage={activePage} setActivePage={setActivePage}/>
         <div className="xl:w-1/2 flex flex-col gap-10 xl:overflow-y-scroll scroll-smooth">
           <About setActivePage={setActivePage}/>
+          <SectionSeparator />
+          <Experience setActivePage={setActivePage}/>
           <SectionSeparator />
           <Career setActivePage={setActivePage}/>
           <SectionSeparator />
