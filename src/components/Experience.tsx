@@ -7,11 +7,16 @@ const EXPERIENCE = [{
     title: "Software Engineering",
     school: "Alcaldía de Medellín(Mayor's Office of Medellín)",
     link: "https://www.medellin.gov.co/es/secretaria-infraestructura-fisica/",
-    start: "July 2024",
-    end: "December 2024",
-    description: "I developed interactive dashboards using ArcGIS Online, supporting the ETL process for data collection and effective visualization. I contributed to the creation of flowcharts for a new internally developed software. Additionally, I designed the Azure architecture for a small project aimed at scalability.",
+    start: "August 2024",
+    end: "Present",
+    description: [
+        "Developed web applications using React (frontend) and Nest.js (backend) to streamline infrastructure management systems.", "Translated UML diagrams into UX/UI interfaces and built interactive dashboards with ArcGIS Online and Dash.",
+        "Deployed scalable cloud solutions using Azure, including architecture design and service management.",
+        "Authored technical documentation (user stories, use cases, deployment models) to align team workflows.",
+        "Collaborated with cross-functional teams to deliver compliant, high-quality software for public sector requirements.",
+    ],
     technologies: [
-        "ArcGis Dashboards", "Python", "Azure", "Git", "GitHub"
+        "React", "Nest.js", "Azure", "ArcGIS", "Figma", "Github", "UML", "Technical Documentation"
     ]
 },]
 
@@ -21,7 +26,6 @@ interface ExperienceProps {
 
 const Experience: React.FC<ExperienceProps> = ({setActivePage}) => {
     const [ref, inView] = useInView();
-
     useEffect(() => {
         if (inView) {
             setActivePage("experience");

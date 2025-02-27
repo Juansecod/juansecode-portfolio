@@ -4,7 +4,7 @@ interface CareerItemInterface{
     link: string | undefined,
     start: string,
     end: string | undefined,
-    description: string | undefined,
+    description?: string | Array<string>,
     technologies: Array<string> | undefined
 }
 
@@ -25,7 +25,17 @@ const CareerItem = ({item}:{item:CareerItemInterface}) => {
                                 <h4 className=" font-light text-sm leading-snug">{school}</h4>
                             </a>
                         </div>
-                        <p className="mt-2 text-sm leading-normal text-wrap">{description}</p>
+                        {typeof description == "string" ? 
+                            (<p className="mt-2 text-sm leading-normal text-wrap">{description}</p>) 
+                        : 
+                            (<ul className="mt-2 text-sm leading-normal text-wrap list-disc">
+                                {description?.map((description, index)=>(
+                                <li key={"description" + index}>
+                                    {description}
+                                </li>
+                            ))}
+                            </ul>)
+                        }
                         <ul className="mt-2 flex flex-wrap">
                             {technologies?.map((technology)=>(
                                 <li className="mr-1.5 mt-2"  key={technology}>
