@@ -30,7 +30,7 @@ const CareerItem = ({item}:{item:CareerItemInterface}) => {
                         : 
                             (<ul className="mt-2 text-sm leading-normal text-wrap list-disc">
                                 {description?.map((description, index)=>(
-                                <li key={"description" + index}>
+                                <li className="pt-2" key={"description" + index}>
                                     {description}
                                 </li>
                             ))}
